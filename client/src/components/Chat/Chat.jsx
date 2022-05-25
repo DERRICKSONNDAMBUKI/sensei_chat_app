@@ -15,7 +15,7 @@ var connectionOptions = {
   transports: ["websocket"],
 };
 
-var socket = io.connect("https://localhost:5000", connectionOptions);
+var socket = io.connect("http://localhost:5000", connectionOptions);
 
 const Chat = ({ location }) => {
   const [name, setName] = useState("");
@@ -24,7 +24,7 @@ const Chat = ({ location }) => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
 
-  const ENDPOINT = "0.0.0.0:5000";
+  const ENDPOINT = "localhost:5000";
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
